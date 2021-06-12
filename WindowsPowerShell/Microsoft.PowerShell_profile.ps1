@@ -4,5 +4,6 @@ Set-PoshPrompt -Theme slim
 $ProfileRoot = (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $env:path += ";$ProfileRoot"
 
-Set-Alias spicetify "C:\Users\Matthew Mao\.spicetify\spicetify.exe" -option ReadOnly
-Set-Alias blockthespot "C:\Users\Matthew Mao\.spicetify\BlockTheSpot.bat" -option ReadOnly
+Set-Alias spicetify "$Home\.spicetify\spicetify.exe" -option ReadOnly
+Set-Alias blockthespot "$Home\.spicetify\BlockTheSpot.bat" -option ReadOnly
+Set-Alias wol "$PSScriptRoot\wol.ps1" -option ReadOnly
