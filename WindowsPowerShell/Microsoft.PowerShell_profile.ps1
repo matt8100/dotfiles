@@ -1,9 +1,13 @@
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme slim
 
-$ProfileRoot = (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$env:path += ";$ProfileRoot"
+$env:path += ";$PSScriptRoot"
 
-Set-Alias spicetify "$Home\.spicetify\spicetify.exe" -option ReadOnly
-Set-Alias blockthespot "$Home\.spicetify\BlockTheSpot.bat" -option ReadOnly
-Set-Alias wol "$PSScriptRoot\wol.ps1" -option ReadOnly
+Get-ChildItem "$PSScriptRoot\MyScripts" -Filter *.ps1 | ForEach-Object {
+  $filename = $_.BaseName
+  $filepath = $_.FullName
+  Set-Alias $filename $filepath
+}
+
+Set-Alias spicetify "$Home\.spicetify\spicetify.exe"
+Set-Alias blockthespot "$Home\.spicetify\BlockTheSpot.bat"
