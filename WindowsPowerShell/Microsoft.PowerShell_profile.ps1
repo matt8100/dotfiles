@@ -1,4 +1,7 @@
-Import-Module oh-my-posh
+if (-not (Get-Module -ListAvailable -Name oh-my-posh)) {
+	Set-PSRepository PSGallery -InstallationPolicy Trusted
+    Install-Module oh-my-posh -Scope CurrentUser | Out-Null
+}
 Set-PoshPrompt -Theme slim
 
 $env:path += ";$PSScriptRoot"
