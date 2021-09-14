@@ -3,3 +3,5 @@ Modules/
 
 # Neovim
 plugged/
+autoload/
+spell/
