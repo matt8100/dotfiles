@@ -12,7 +12,7 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 Plug 'sheerun/vim-polyglot'            " On-demand language packs
 Plug 'plasticboy/vim-markdown'         " Markdown addons
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
+"let g:vim_markdown_conceal = 0
 let g:vim_markdown_math = 1
 
 Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'markdown'} " Better LaTeX conceal
@@ -21,7 +21,7 @@ let g:tex_conceal = "abgm"
 
 Plug 'GregBowyer/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'branch': 'katex' } " Paste inline images from clipboard
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 

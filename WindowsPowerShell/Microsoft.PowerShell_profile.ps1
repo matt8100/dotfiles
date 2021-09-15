@@ -10,3 +10,5 @@ Get-ChildItem "$PSScriptRoot\MyScripts" -Filter *.ps1 | ForEach-Object {
 
 Set-Alias spicetify "$Home\.spicetify\spicetify.exe"
 Set-Alias blockthespot "$Home\.spicetify\BlockTheSpot.bat"
+
+$school = "$Home\OneDrive - University of Toronto"

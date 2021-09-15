@@ -13,33 +13,23 @@ endglobal
 # Sections and Paragraphs #
 ###########################
 snippet sec "Section" b
-# ${1:Section Name} #
-
-$0
+# ${1:Section Name} #$0
 endsnippet
 
 snippet ssec "Sub Section" b
-## ${1:Section Name} ##
-
-$0
+## ${1:Section Name} ##$0
 endsnippet
 
 snippet sssec "SubSub Section" b
-### ${1:Section Name} ###
-
-$0
+### ${1:Section Name} ###$0
 endsnippet
 
-snippet sssec "SubSubSub Section" b
-#### ${1:Section Name} ####
-
-$0
+snippet ssssec "SubSubSub Section" b
+#### ${1:Section Name} ####$0
 endsnippet
 
-snippet sssec "SubSubSubSub Section" b
-##### ${1:Section Name} #####
-
-$0
+snippet sssssec "SubSubSubSub Section" b
+##### ${1:Section Name} #####$0
 endsnippet
 
 ###################
@@ -77,7 +67,7 @@ $0
 endsnippet
 
 #########
-# Castel LaTeX #
+# LaTeX #
 #########
 
 context "math()"
@@ -131,7 +121,6 @@ snippet ali "Align" bA
 .\end{align*}
 endsnippet
 
-
 context "math()"
 snippet // "Fraction" iA
 \\frac{$1}{$2}$0
@@ -163,6 +152,12 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 endsnippet
 
 context "math()"
+snippet br "newline" iA
+\\\\~\\\\
+$0
+endsnippet
+
+context "math()"
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
@@ -175,6 +170,16 @@ endsnippet
 context "math()"
 snippet == "equals" iA
 &= $1 \\\\
+endsnippet
+
+context "math()"
+snippet tht "theta" iA
+\theta
+endsnippet
+
+context "math()"
+snippet bld "bold" iA
+\bold
 endsnippet
 
 context "math()"
@@ -286,6 +291,11 @@ snippet ** "cdot" iA
 endsnippet
 
 context "math()"
+snippet abs "absolute" iA
+|$1|$0
+endsnippet
+
+context "math()"
 snippet norm "norm" iA
 \|$1\|$0
 endsnippet
@@ -293,7 +303,7 @@ endsnippet
 priority 100
 context "math()"
 snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
-\\`!p snip.rv = match.group(1)`
+\\`!p snip.rv = match.group(1)` 
 endsnippet
 
 priority 300
@@ -308,11 +318,15 @@ snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rw
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
-
 priority 100
 context "math()"
 snippet -> "to" iA
 \to 
+endsnippet
+
+context "math()"
+snippet qd "quad" iA
+\quad 
 endsnippet
 
 priority 200
@@ -368,6 +382,11 @@ endsnippet
 context "math()"
 snippet RR "real" iA
 \R
+endsnippet
+
+context "math()"
+snippet CC "C" iA
+\mathbb{C}$0
 endsnippet
 
 context "math()"

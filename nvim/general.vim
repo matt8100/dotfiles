@@ -1,5 +1,7 @@
 " General
 set hidden                   " keep multiple buffers open
+set ignorecase
+set smartcase
 
 " Editing
 set mouse=a                  " enable mouse in all modes
@@ -9,11 +11,6 @@ set softtabstop=4            " set tab width to 4 spaces
 set shiftwidth=4             " set indent size on on newline
 set smarttab                 " use tab behaviour on spaces
 set smartindent              " enable contextual indenting
-
-" Spellcheck
-set spell                    " enable spellcheck
-set spelllang=en             " set spellcheck language
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " Visual
 set encoding=UTF-8           " set character set
