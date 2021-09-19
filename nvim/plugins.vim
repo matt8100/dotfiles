@@ -17,15 +17,17 @@ let g:vim_markdown_math = 1
 
 Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'markdown'} " Better LaTeX conceal
 set conceallevel=2
+let g:tex_nospell = 1 " Disable spellcheck inside math
 let g:tex_conceal = "abgm"
 
-Plug 'GregBowyer/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'branch': 'katex' } " Paste inline images from clipboard
+Plug 'GregBowyer/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'branch': 'katex' } " Preview markdown in browser
+let g:mkdp_auto_start = 1
 
 Plug 'cohama/lexima.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 
-Plug 'ferrine/md-img-paste.vim'
+Plug 'ferrine/md-img-paste.vim' " Paste inline images from clipboard
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 " there are some defaults for image directory and image name, you can change them
 "" let g:mdip_imgdir = 'img'
@@ -40,6 +42,21 @@ Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? coc#_select_confirm() :
+"      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+
+"function! s:check_back_space() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+
+"let g:coc_snippet_next = '<tab>'
+
 
 
 

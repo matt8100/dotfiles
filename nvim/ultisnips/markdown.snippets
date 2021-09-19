@@ -116,9 +116,9 @@ $0
 endsnippet
 
 snippet ali "Align" bA
-\begin{align*}
+\begin{aligned}
 	${1:${VISUAL}}
-.\end{align*}
+\end{aligned}
 endsnippet
 
 context "math()"
@@ -169,7 +169,12 @@ endsnippet
 
 context "math()"
 snippet == "equals" iA
-&= $1 \\\\
+&= $1 \\~\\
+endsnippet
+
+context "math()"
+snippet nrt "nth root" iA
+\sqrt[$1]{${2:${VISUAL}}}$0
 endsnippet
 
 context "math()"
@@ -236,7 +241,7 @@ endsnippet
 
 context "math()"
 snippet sq "\sqrt{}" iA
-\sqrt{${1:${VISUAL}}} $0
+\sqrt{${1:${VISUAL}}}$0
 endsnippet
 
 context "math()"
