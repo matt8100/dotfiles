@@ -1,3 +1,4 @@
+Import-Module Terminal-Icons
 Set-PoshPrompt -Theme slim
 
 $env:path += ";$PSScriptRoot"
