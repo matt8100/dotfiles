@@ -1,15 +1,15 @@
-Import-Module Terminal-Icons
-Set-PoshPrompt -Theme slim
+# Theming
+try { Import-Module Terminal-Icons }
+catch { "The Terminal-Icons module is not installed" }
 
-$env:path += ";$PSScriptRoot"
+try { oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/slim.omp.json | Invoke-Expression }
+catch { "oh-my-posh execution failed" }
 
-Get-ChildItem "$PSScriptRoot\MyScripts" -Filter *.ps1 | ForEach-Object {
-  $filename = $_.BaseName
-  $filepath = $_.FullName
-  Set-Alias $filename $filepath
-}
+# Behavior
+Set-PSReadLineOption -EditMode Emacs
 
-Set-Alias spicetify "$Home\.spicetify\spicetify.exe"
-Set-Alias blockthespot "$Home\.spicetify\BlockTheSpot.bat"
+# Alias
+$env:path += ";$PSScriptRoot\MyScripts"
 
+$files = "C:\Files"
 $school = "$Home\OneDrive - University of Toronto"

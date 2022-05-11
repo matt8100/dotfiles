@@ -1,8 +1,11 @@
-# .SYNOPSIS
-# Generate a diceware password
+<#
+.SYNOPSIS
+Generate a diceware password
  
-# .DESCRIPTION
-# Randomly generates a diceware password using the EFF short word list at https://www.eff.org/files/2016/09/08/eff_short_wordlist_1.txt and copies to the clipboard.
+.DESCRIPTION
+Randomly generates a diceware password using the EFF short word list at https://www.eff.org/files/2016/09/08/eff_short_wordlist_1.txt and copies to the clipboard.
+#>
+
 
 $hashTable = @{}
 Import-Csv "$PSScriptRoot\passphrases.csv" | ForEach-Object { $hashTable[$_.Rolls] = (Get-Culture).TextInfo.ToTitleCase($_.Passphrase) }

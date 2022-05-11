@@ -1,15 +1,17 @@
-# .SYNOPSIS
-# Wakes a machine through Wake On LAN.
+<#
+.SYNOPSIS
+Wakes a machine through Wake On LAN.
  
-# .DESCRIPTION
-# wol sends a Wake On LAN magic packet to a given machine's MAC address.
+.DESCRIPTION
+wol sends a Wake On LAN magic packet to a given machine's MAC address.
  
-# .PARAMETER Mac
-# MacAddress of target machine to wake.
+.PARAMETER Mac
+MacAddress of target machine to wake.
  
-# .EXAMPLE
-# > wol A0:DE:F1:69:BE:02
-# > Magic packet sent.
+.EXAMPLE
+> wol A0:DE:F1:69:BE:02
+> Magic packet sent.
+#>
 
 Param ([string]$MacAddress)
 
