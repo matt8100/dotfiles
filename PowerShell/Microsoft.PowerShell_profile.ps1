@@ -10,4 +10,3 @@ $env:path += ";$PSScriptRoot\Scripts"
 
 $files = "C:\Files"
 $school = "$Home\OneDrive - University of Toronto"
-
